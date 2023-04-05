@@ -16,7 +16,7 @@ import kotlinx.coroutines.flow.launchIn
 
 
 @HiltViewModel
-class NewsViewmodel@Inject constructor(private val getNewsArticleUseCase: GetNewsArticleUseCase):
+class NewsViewmodel @Inject constructor(private val getNewsArticleUseCase: GetNewsArticleUseCase):
     ViewModel() {
     val articles = mutableStateOf(HomeStateHolder())
     init {

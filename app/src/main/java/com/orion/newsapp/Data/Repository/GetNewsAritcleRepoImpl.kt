@@ -5,6 +5,7 @@ import com.orion.newsapp.Domain.Model.Article
 import com.orion.newsapp.Domain.Repository.GetNewsArticleRepo
 import com.orion.newsapp.mappers.toDomain
 import com.orion.newsapp.util.SafeApiRequest
+import dagger.hilt.android.lifecycle.HiltViewModel
 import retrofit2.Response
 import javax.inject.Inject
 
