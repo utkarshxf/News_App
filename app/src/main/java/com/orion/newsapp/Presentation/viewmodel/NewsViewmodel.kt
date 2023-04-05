@@ -25,7 +25,7 @@ class NewsViewmodel@Inject constructor(private val getNewsArticleUseCase: GetNew
 
                 }
                 is Resource.Success->{
-                   
+
                 }
                 is Resource.Error->{}
             }
