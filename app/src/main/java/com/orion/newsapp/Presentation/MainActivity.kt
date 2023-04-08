@@ -16,22 +16,37 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
+import com.orion.newsapp.Presentation.components.MainBottomNavigation
+import com.orion.newsapp.Presentation.components.MainNevgation
 import com.orion.newsapp.Presentation.screen.HomeScreen
 import com.orion.newsapp.Presentation.viewmodel.NewsViewmodel
 import com.orion.newsapp.ui.theme.NewsAppTheme
 import dagger.hilt.android.AndroidEntryPoint
+import com.orion.newsapp.Presentation.components.TopAppBar
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+
+    @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             NewsAppTheme{
-
                 app {
-                    Scaffold(topBar = { TopAppBar()}) { contentPadding ->
-                        // Screen content
-                        Box(modifier = Modifier.padding(contentPadding)) { HomeScreen() }
+                    val navController = rememberNavController()
+                    Scaffold(
+                        topBar = {
+                            TopAppBar()
+                        },
+                        bottomBar = {
+                            MainBottomNavigation(navController = navController)
+                        },
+                        modifier = Modifier) {
+//                        Box(modifier = Modifier.padding(contentPadding)) { HomeScreen() }
+                        MainNevgation(navHostController = navController)
                     }
 
                 }
@@ -40,27 +55,12 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+
 @Composable
 fun app(content : @Composable ()->Unit)
     {
         content()
     }
 
-@Preview(showBackground = true)
-@Composable
-fun TopAppBar(modifier: Modifier = Modifier) {
-    Row(
-        modifier = modifier
-            .fillMaxWidth()
-            .background(color = MaterialTheme.colors.onSurface),
-        verticalAlignment = Alignment.CenterVertically
-    ) {
-        Text(
-            text = "news", color = Color.White,
-            style = MaterialTheme.typography.h1
-        )
-
-    }
-}
 
 
