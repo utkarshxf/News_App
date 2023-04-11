@@ -86,7 +86,9 @@ class GoogleAuthUiClient(
                     .setServerClientId(context.getString(R.string.web_client_id))
                     .build()
             )
+
             .setAutoSelectEnabled(true)
             .build()
+
     }
 }

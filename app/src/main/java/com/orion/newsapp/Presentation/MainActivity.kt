@@ -40,8 +40,10 @@ import dagger.hilt.android.AndroidEntryPoint
 import com.orion.newsapp.Presentation.components.TopAppBar
 import com.google.android.gms.auth.api.identity.Identity
 import com.orion.newsapp.Presentation.screen.LogInController
+import com.orion.newsapp.Presentation.screen.ProfileScreen
 import com.orion.newsapp.Presentation.screen.SignInScreen
 import com.orion.newsapp.Presentation.sign_in.GoogleAuthUiClient
+import com.orion.newsapp.Presentation.sign_in.UserData
 import com.orion.newsapp.Presentation.viewmodel.SignInViewModel
 import kotlinx.coroutines.launch
 
@@ -69,7 +71,11 @@ class MainActivity : ComponentActivity() {
                         composable("sign_in") {
                             val viewModel = viewModel<SignInViewModel>()
                             val state by viewModel.state.collectAsStateWithLifecycle()
-
+                            LaunchedEffect(key1 = Unit){
+                                if (googleAuthUiClient.getSignInUser() != null){
+                                    navController.navigate("main")
+                                }
+                            }
                             val launcher = rememberLauncherForActivityResult(
                                 contract = ActivityResultContracts.StartIntentSenderForResult(),
                                 onResult = { result ->
@@ -90,7 +96,8 @@ class MainActivity : ComponentActivity() {
                                         "successfully login",
                                         Toast.LENGTH_LONG
                                     ).show()
-
+                                    navController.navigate("profile")
+                                    viewModel.resetState()
                                 }
                             }
                             SignInScreen(
@@ -107,6 +114,28 @@ class MainActivity : ComponentActivity() {
                                 }
                             )
                         }
+                        composable("main"){
+                            uiStructure(userData = googleAuthUiClient.getSignInUser(),
+                            onSignInClick = {
+//                                lifecycleScope.launch{
+//                                navController.navigate("profile")
+//                                   }
+                               }
+                            )
+                        }
+                        composable("profile"){
+                            ProfileScreen(userData = googleAuthUiClient.getSignInUser(), onSignOut = {lifecycleScope.launch{
+                                googleAuthUiClient.signOut()
+                                Toast.makeText(
+                                    applicationContext,
+                                    "signed_out",
+                                    Toast.LENGTH_LONG
+                                ).show()
+                                navController.popBackStack()
+                                   }
+                                }
+                            )
+                        }
                     }
                 }
             }
@@ -115,12 +144,12 @@ class MainActivity : ComponentActivity() {
 }
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
-fun uiStructure() {
+fun uiStructure(userData: UserData? ,onSignInClick: ()->Unit) {
     app {
         val navController = rememberNavController()
         Scaffold(
             topBar = {
-                TopAppBar()
+                TopAppBar(userData = userData , onSignInClick = onSignInClick)
             },
             bottomBar = {
                 MainBottomNavigation(navController = navController)
