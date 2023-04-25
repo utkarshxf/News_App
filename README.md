@@ -4,6 +4,6 @@ A newzfi app is a mobile application that provides users with up-to-date news an
 
 
 
-## Screenshots
-
 ![App Screenshot](https://user-images.githubusercontent.com/78771861/234365931-894a874a-a5d0-4458-93f6-072243920b32.gif)
+
+
