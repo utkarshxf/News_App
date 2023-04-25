@@ -9,7 +9,7 @@
 ![App Screenshot](https://user-images.githubusercontent.com/78771861/234365931-894a874a-a5d0-4458-93f6-072243920b32.gif)
 A newzfi app is a mobile application that provides users with up-to-date news and information from various sources, typically in a user-friendly and customizable format. These apps offer news on various topics, including politics, sports, entertainment, business, and more.
 
-
+<img src=https://user-images.githubusercontent.com/78771861/234373867-aff56157-d9d5-42a9-9602-1bd4eb818ca5.gif align="right" width="320"/>
 ## Tech stack & Open-source libraries
 - Minimum SDK level 21
 - [Kotlin](https://kotlinlang.org/) based, [Coroutines](https://github.com/Kotlin/kotlinx.coroutines) + [Flow](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/) for asynchronous.
@@ -25,15 +25,12 @@ A newzfi app is a mobile application that provides users with up-to-date news an
 - [Retrofit2 & OkHttp3](https://github.com/square/retrofit): Construct the REST APIs and paging network data.
 - [Material-Components](https://github.com/material-components/material-components-android): Material design components for building ripple animation, and CardView.
 - [Glide](https://github.com/bumptech/glide), [GlidePalette](https://github.com/florent37/GlidePalette): Loading images from network.
-- 
-
-<img src=https://user-images.githubusercontent.com/78771861/234373867-aff56157-d9d5-42a9-9602-1bd4eb818ca5.gif align="right" width="320"/>
 
 
 ## Architecture
 **Newify** is based on the MVVM architecture and the Repository pattern, which follows the [Google's official architecture guidance](https://developer.android.com/topic/architecture).
 
-![architecture](figure/figure0.png)
+![figure0](https://user-images.githubusercontent.com/78771861/234374635-afd7205c-ff92-48f6-a739-d39a1419b856.png)
 
 The overall architecture of **Newify** is composed of two layers; the UI layer and the data layer. Each layer has dedicated components and they have each different responsibilities, as defined below:
 
@@ -42,7 +39,7 @@ The overall architecture of **Newify** is composed of two layers; the UI layer a
 
 ### Architecture Overview
 
-![architecture](figure/figure1.png)
+![figure1](https://user-images.githubusercontent.com/78771861/234374772-3f234436-1ebb-4421-b966-7734082e330d.png)
 
 - Each layer follows [unidirectional event/data flow](https://developer.android.com/topic/architecture/ui-layer#udf); the UI layer emits user events to the data layer, and the data layer exposes data as a stream to other layers.
 - The data layer is designed to work independently from other layers and must be pure, which means it doesn't have any dependencies on the other layers.
@@ -51,7 +48,7 @@ With this loosely coupled architecture, you can increase the reusability of comp
 
 ### UI Layer
 
-![architecture](figure/figure2.png)
+![figure2](https://user-images.githubusercontent.com/78771861/234374929-0b5b1265-10fd-47c6-8cb6-acd49c16a9df.png)
 
 The UI layer consists of UI elements to configure screens that could interact with users and [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) that holds app states and restores data when configuration changes.
 - UI elements observe the data flow via [DataBinding](https://developer.android.com/topic/libraries/data-binding), which is the most essential part of the MVVM architecture. 
@@ -59,14 +56,16 @@ The UI layer consists of UI elements to configure screens that could interact wi
 
 ### Data Layer
 
-![architecture](figure/figure3.png)
+
+![figure3](https://user-images.githubusercontent.com/78771861/234375003-f97e3da8-2fc3-4606-9a23-d118fb354079.png)
 
 The data Layer consists of repositories, which include business logic, such as querying data from the local database and requesting remote data from the network. It is implemented as an offline-first source of business logic and follows the [single source of truth](https://en.wikipedia.org/wiki/Single_source_of_truth) principle.<br>
 
 
 ## Modularization
 
-![architecture](figure/figure4.png)
+
+![figure4](https://user-images.githubusercontent.com/78771861/234375037-3b78d1c2-4531-4ca1-aee4-c67a3a83349a.png)
 
 **Newify** adopted modularization strategies below:
 
