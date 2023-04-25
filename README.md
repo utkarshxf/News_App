@@ -1,5 +1,14 @@
 # Newzfi
 
+<h1 align="center">Newzfi</h1>
+
+<p align="center">  
+🗡️ Newzfi demonstrates modern Android development with Hilt, Coroutines, Flow, Jetpack (Room, ViewModel), and Material Design based on MVVM architecture.
+</p>
+</br>
+
+
+
 A newzfi app is a mobile application that provides users with up-to-date news and information from various sources, typically in a user-friendly and customizable format. These apps offer news on various topics, including politics, sports, entertainment, business, and more.
 
 
