@@ -17,7 +17,7 @@ A newzfi app is a mobile application that provides users with up-to-date news an
   - Lifecycle: Observe Android lifecycles and handle UI states upon the lifecycle changes.
   - ViewModel: Manages UI-related data holder and lifecycle aware. Allows data to survive configuration changes such as screen rotations.
   - DataBinding: Binds UI components in your layouts to data sources in your app using a declarative format rather than programmatically.
-  - Room: Constructs Database by providing an abstraction layer over SQLite to allow fluent database access.
+  - Firebase Auth: provides backend services, easy-to-use SDKs, and ready-made UI libraries to authenticate users to your app.
   - [Hilt](https://dagger.dev/hilt/): for dependency injection.
 - Architecture
   - MVVM Architecture (View - DataBinding - ViewModel - Model)
