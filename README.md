@@ -27,7 +27,7 @@ A newzfi app is a mobile application that provides users with up-to-date news an
 - [Glide](https://github.com/bumptech/glide), [GlidePalette](https://github.com/florent37/GlidePalette): Loading images from network.
 - 
 
-<img src="https://user-images.githubusercontent.com/78771861/234373867-aff56157-d9d5-42a9-9602-1bd4eb818ca5.gif" align="right" width="320"/>
+<img src=https://user-images.githubusercontent.com/78771861/234373867-aff56157-d9d5-42a9-9602-1bd4eb818ca5.gif align="right" width="320"/>
 
 
 ## Architecture
