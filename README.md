@@ -8,7 +8,7 @@
 
 ![App Screenshot](https://user-images.githubusercontent.com/78771861/234365931-894a874a-a5d0-4458-93f6-072243920b32.gif)
 A newzfi app is a mobile application that provides users with up-to-date news and information from various sources, typically in a user-friendly and customizable format. These apps offer news on various topics, including politics, sports, entertainment, business, and more.
-
+<img src=https://user-images.githubusercontent.com/78771861/234373867-aff56157-d9d5-42a9-9602-1bd4eb818ca5.gif align="right" />
 
 ## Tech stack & Open-source libraries
 - Minimum SDK level 21
@@ -26,7 +26,6 @@ A newzfi app is a mobile application that provides users with up-to-date news an
 - [Material-Components](https://github.com/material-components/material-components-android): Material design components for building ripple animation, and CardView.
 - [Glide](https://github.com/bumptech/glide), [GlidePalette](https://github.com/florent37/GlidePalette): Loading images from network.
 
-<img src=https://user-images.githubusercontent.com/78771861/234373867-aff56157-d9d5-42a9-9602-1bd4eb818ca5.gif align="right" width="320"/>
 ## Architecture
 **Newify** is based on the MVVM architecture and the Repository pattern, which follows the [Google's official architecture guidance](https://developer.android.com/topic/architecture).
 
