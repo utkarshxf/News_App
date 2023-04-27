@@ -82,7 +82,7 @@ For more information, check out the [Guide to Android app modularization](https:
 
 
 Newify using the [NewsAPI](newsapi.org) for constructing RESTful API.<br>
-PokeAPI provides a RESTful API interface to highly detailed objects built from thousands of lines of data related to Pokémon.
+newsAPI provides a RESTful API interface to highly detailed objects built from thousands of lines of data related to news.
 
 ## Find this repository useful? :heart:
 for this repository. :star: <br>
